@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css"/>
+    <title>LogIn</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .log-container{
+            position: relative;
+            width: 40%;
+            height: 200px;
+            margin: auto;
+            background-color: rgb(44, 44, 103);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            overflow: hidden;
+        }
+        input{
+            width: 80%;
+            height: 40px;
+            border-radius: 5px;
+            z-index: 1;
+            overflow: hidden;
+            
+        }
+        
+        i,.beam{
+            position: absolute;
+            font-size: 25px;
+            color: rgb(0, 0, 0);
+            margin-top: 10px;
+            right: 10%;
+
+        }
+        .fa-eye{
+            margin-top: 140px;
+        }
+        .beam{
+            margin-top: 140px;
+            width: 100vw;
+            height: 200px;
+            z-index: 1;
+            background-color: yellow;
+            clip-path:polygon(100% 50%,100% 50%, 0 0, 0 100%);
+            -webkit-clip-path:polygon(100% 50%,100% 50%, 0 0, 0 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="log-container">
+        <h2>Log In</h2>
+        <input type="text" placeholder="User Name">
+        <i class="fa-regular fa-user" ></i>
+        <input id="pswd" type="password" placeholder="Password">
+        <i class="fa-regular fa-eye" onclick="show()"></i>
+        <div class="beam"></div>
+    </div>
+
+    <script>
+        function show(){
+            const pswd = document.getElementById("pswd");
+            if(pswd.type === "password" ){
+                pswd.type = "text";
+            }
+            else{
+                pswd.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>

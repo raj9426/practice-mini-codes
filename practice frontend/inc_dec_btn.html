@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>increment & decrement button</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(43, 7, 97);
+            width: 100%;
+            height: 100vh;
+            font-size: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* gap: 20px; */
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .wrapper{
+           background-color: aliceblue;
+           height: 150px;
+           width: 350px;
+           border-radius: 20px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+        }
+        span{
+            padding: 30px;
+            cursor: pointer;
+            /* background-color: aliceblue; */
+        }
+        .num{
+            border-width: 100px;
+            border-right: 1px solid black;
+            border-left: 1px solid black;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <span class="minus">-</span>
+        <span class="num">01</span>
+        <span class="plus">+</span>
+    </div>
+    <div class="dining">
+        
+    </div>
+    <script>
+        const minus = document.querySelector(".minus"),
+        num = document.querySelector(".num"),
+        plus = document.querySelector(".plus");
+
+        let a = 1;
+
+        plus.addEventListener("click", ()=>{
+            
+            if (a<8){
+                a++;
+                a = "0"+a;
+                num.innerText = a
+            }
+        });
+        minus.addEventListener("click", ()=>{
+            
+            if (a != 1){
+                a--;
+                a = "0"+a;
+                num.innerText = a
+            }
+        });
+        
+    </script>
+</body>
+</html>
